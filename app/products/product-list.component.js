@@ -49,15 +49,19 @@ var ProductListComponent = (function () {
             }
         ];
     }
+    //list: Product[] = [new Product(2, "garden cart", "GDN-0023", "March 18, 2016", "15 gallon capacity rolling garden cart", 32.99, 4.2, "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png")];
+    //list : Array<Product> = [new Product(2, "garden cart", "GDN-0023", "March 18, 2016", "15 gallon capacity rolling garden cart", 32.99, 4.2, "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png")];
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
     };
-    ProductListComponent.prototype.filtering = function () {
+    ProductListComponent.prototype.ngOnInit = function () {
+        console.log('blablabla');
     };
     ProductListComponent = __decorate([
         core_1.Component({
             selector: 'pm-products',
-            templateUrl: 'app/products/product-list.component.html'
+            templateUrl: 'app/products/product-list.component.html',
+            styleUrls: ['app/products/product-list.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], ProductListComponent);
