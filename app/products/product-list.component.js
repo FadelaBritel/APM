@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var product_1 = require('./product');
 var ProductListComponent = (function () {
     function ProductListComponent() {
         this.pageTitle = 'Product List';
@@ -16,7 +17,7 @@ var ProductListComponent = (function () {
         this.imageMargin = 2;
         this.showImage = false;
         this.filter = 'cart';
-        this.products = [
+        /*products: IProduct[]= [
             {
                 "productId": 1,
                 "productName": "Leaf Rake",
@@ -26,7 +27,7 @@ var ProductListComponent = (function () {
                 "price": 19.95,
                 "starRating": 3.2,
                 "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            },
+             },
             {
                 "productId": 2,
                 "productName": "Garden Cart",
@@ -47,10 +48,12 @@ var ProductListComponent = (function () {
                 "starRating": 4.8,
                 "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
             }
-        ];
+            ];
+    */
+        this.list = [new product_1.Product(2, "garden cart", "GDN-0023", "March 18, 2016", "15 gallon capacity rolling garden cart", 32.99, 4.2, "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"),
+            new product_1.Product(5, "Leaf Rake", "GDN-0011", "March 19, 2016", "Leaf rake with 48-inch wooden handle.", 19.95, 3.2, "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"),
+            new product_1.Product(1, "Hammer", "TBX-0048", "May 21, 2016", "Curved claw steel hammer", 8.9, 4.8, "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png")];
     }
-    //list: Product[] = [new Product(2, "garden cart", "GDN-0023", "March 18, 2016", "15 gallon capacity rolling garden cart", 32.99, 4.2, "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png")];
-    //list : Array<Product> = [new Product(2, "garden cart", "GDN-0023", "March 18, 2016", "15 gallon capacity rolling garden cart", 32.99, 4.2, "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png")];
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
     };
