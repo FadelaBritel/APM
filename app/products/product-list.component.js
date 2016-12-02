@@ -9,26 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var product_1 = require('./product');
+var product_service_1 = require('./product.service');
 var ProductListComponent = (function () {
-    function ProductListComponent() {
+    function ProductListComponent(_productService) {
+        this._productService = _productService;
         this.pageTitle = 'Product List';
         this.imageWidth = 50;
         this.imageMargin = 2;
         this.showImage = false;
         this.listFilter = '';
-        this.list = [new product_1.Product(2, "garden cart", "GDN-0023", "March 18, 2016", "15 gallon capacity rolling garden cart", 32.99, 4.2, "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"),
-            new product_1.Product(5, "Leaf Rake", "GDN-0011", "March 19, 2016", "Leaf rake with 48-inch wooden handle.", 19.95, 3.2, "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"),
-            new product_1.Product(1, "Hammer", "TBX-0048", "May 21, 2016", "Curved claw steel hammer", 8.9, 4.8, "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png")];
     }
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
     };
     ProductListComponent.prototype.ngOnInit = function () {
-        console.log('on init');
+        this.list = this._productService.getProducts();
     };
     ProductListComponent.prototype.onRatingClicked = function (message) {
-        //this.pageTitle = 'Product List : ' + message;
+        this.pageTitle = 'Product List : ' + message;
         console.log('clicked ');
     };
     ProductListComponent = __decorate([
@@ -38,7 +36,7 @@ var ProductListComponent = (function () {
             templateUrl: 'product-list.component.html',
             styleUrls: ['product-list.component.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [product_service_1.ProductService])
     ], ProductListComponent);
     return ProductListComponent;
 }());
