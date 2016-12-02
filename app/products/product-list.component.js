@@ -25,7 +25,11 @@ var ProductListComponent = (function () {
         this.showImage = !this.showImage;
     };
     ProductListComponent.prototype.ngOnInit = function () {
-        console.log('blablabla');
+        console.log('on init');
+    };
+    ProductListComponent.prototype.onRatingClicked = function (message) {
+        //this.pageTitle = 'Product List : ' + message;
+        console.log('clicked ');
     };
     ProductListComponent = __decorate([
         core_1.Component({
